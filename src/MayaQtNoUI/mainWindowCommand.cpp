@@ -4,7 +4,7 @@
 #include <maya/MQtUtil.h>
 
 
-const MString MainWindowCommand::m_command_name("createYTMainWindows");
+const MString MainWindowCommand::m_command_name("createMainWindow");
 
 QPointer<MainWindow>	MainWindowCommand::m_main_window;
 

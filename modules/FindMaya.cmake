@@ -144,3 +144,12 @@ foreach(MAYA_LIB ${_MAYA_LIBRARIES})
     endif()
 endforeach()
 
+function(MAYA_PLUGIN _target)
+    if (WIN32)
+        set_target_properties(${_target} PROPERTIES
+                LINK_FLAGS "/export:initializePlugin /export:uninitializePlugin")
+    endif()
+    set_target_properties(${_target} PROPERTIES
+            PREFIX ""
+            SUFFIX ${MAYA_PLUGIN_EXTENSION})
+endfunction()

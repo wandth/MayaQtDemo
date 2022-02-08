@@ -1,7 +1,8 @@
-project(mayaQtDemo)
-cmake_policy(SET CMP0048 NEW)
 cmake_minimum_required(VERSION 3.21)
 
+project(MayaQtDemo)
+
+cmake_policy(SET CMP0048 NEW)
 set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/modules)
@@ -15,11 +16,13 @@ set(MAYA_VERSION 2020)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(CMAKE_PREFIX_PATH "D:/Qt/5.15.2/msvc2019_64")
+set(Qt5_DIR  "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5")
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_subdirectory(src)
+set(CMAKE_BUILD_TYPE Release)
 
+add_subdirectory(src/MayaQtNoUI)
+add_subdirectory(src/MayaQtWithUI)

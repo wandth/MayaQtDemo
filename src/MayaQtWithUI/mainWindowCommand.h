@@ -1,0 +1,23 @@
+#ifndef MAYAQTDEMO_MAINWINDOWCOMMAND_H
+#define MAYAQTDEMO_MAINWINDOWCOMMAND_H
+
+
+#include <maya/MPxCommand.h>
+#include <QtCore/QPointer>
+#include <maya/MString.h>
+
+#include "mainWindowUI.h"
+
+class MainWindowCommand:MPxCommand
+{
+public:
+	static void		cleanup();
+	static void*	creator() { return new MainWindowCommand(); }
+
+	MStatus			doIt(const MArgList& args);
+
+public:
+	static const MString    m_command_name;
+};
+
+#endif
